@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Set text colour and font */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: dimgray;
+}
+
+
+/* Resize blockquote text */
+
+blockquote {
+    font-size: 1.1em;
+}
+
+
+/* Text fadeIn animation */
+
+.appear {
+    margin-left: 2.5em;
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+}
+
+
+/* Move text down */
+
+.text {
+    margin-top: 7em;
+}
+
+
+/* Header fades in first */
+
+.header {
+    opacity: 0;
+    animation: fadeIn ease forwards 1s 0.8s;
+    -webkit-animation: fadeIn ease forwards 1s 0.8s;
+    -moz-animation: fadeIn ease forwards 1s 0.8s;
+    -o-animation: fadeIn ease forwards 1s 0.8s;
+}
+
+
+/* Content fades in second & and move content down*/
+
+.content {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 2em;
+    opacity: 0;
+    animation: fadeIn ease forwards 1s 1.2s;
+    -webkit-animation: fadeIn ease forwards 1s 1.2s;
+    -moz-animation: fadeIn ease forwards 1s 1.2s;
+    -o-animation: fadeIn ease forwards 1s 1.2s;
+}
+
+
+/* Social media buttons */
+
+.fa {
+    margin-top: 1em;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    padding: 7px;
+    
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+
+/* On hover do not underline or change colour */
+
+.fa:hover,
+.fa:active,
+.fa:visited,
+.fa:focus {
+    opacity: 0.7;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Do not underline links */
+
+a {
+    text-decoration: none;
+    color: #455A64;
+}
+
+
+/* Do not underline links on hover*/
+
+a:hover {
+    text-decoration: none;
+    color: #607D8B;
+}
+
+footer {
+    margin-top: 1em;
+}
+
+/* On mobile, push the green column down and have no padding */
+
+.col-right {
+    color: #e8e8e8;
+    padding: 0;
+    margin-top: 9em;
+    background-color: #e2e2e2;
+    text-align: center;
+}
+
+
+/* Resize images */
+
+img {
+    width: 10em;
+    height: 10em;
+    padding: 1em;
+}
+
+
+/* Move chapter sections down */
+
+.chapters {
+    opacity: 0;
+    animation: fadeIn ease forwards 1s 1.5s;
+    -webkit-animation: fadeIn ease forwards 1s 1.5s;
+    -moz-animation: fadeIn ease forwards 1s 1.5s;
+    -o-animation: fadeIn ease forwards 1s 1.5s;
+    color: white;
+}
+
+.chapter {
+    margin-top: 5em;
+}
+
+/* Add a border around chapter images */
+.border {
+    width: 100%;
+    height: 100%;
+    background-color: #607D8B;
+    border: 10px solid #607D8B;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+
+/* Change chapter border colours on hover */
+
+.border:hover {
+    background-color: #455A64;
+    border-color: #455A64;
+}
+
+
+/* Resize chapter titles */
+
+h2 {
+    font-size: 1em;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    background-color: #37474F;
+    border: 10px solid #37474F;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* If the screen isn't a phone, show the columns side by side */
+
+@media (min-width: 48em) {
+    .col-left {
+        width: 35%;
+        height: 100%;
+        display: inline-block;
+        position: fixed;
+        float: left;
+        padding-right: 2em;
+    }
+    .col-right {
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+        position: fixed;
+        margin-left: 40%;
+        margin-top: 0%;
+        float: right;
+    }
+    .fa {
+        margin-top: 4em;
+    }
+    /* Show chapter titles on hover */
+    .border:hover+h2 {
+        opacity: 1;
+    }
+    /* Make chapter titles invisible for on hover */
+    h2,
+    h2:hover {
+        opacity: 0;
+    }
+}
+
+.bob {
+    margin-top: 1000000px;
+}
+
+
+/* Fade in animation */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- HTML boilerplate stuff -->
+    <meta charset="UTF-8">
+    <title>Abstract Algebra</title>
+    <link rel="icon" href="assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and Jquery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Social media icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="appear">
+        <!-- Grey column  -->
+        <div class="col-left">
+            <div class="text">
+                <div class="header">
+                    <h1>Visualising Groups</h1>
+                </div>
+                <div class="content">
+                    <blockquote>Physicist James Jeans asserted “We may as well cut out group theory. That is a subject which will never be of any use in Physics”. But Oswald Veblen disregarded Jeans’ advice. It has turned out that group theory grew into one of the central themes of Physics.
+                        <footer><a href="https://goo.gl/HQECxn">The Shaping of Indian Science</a></footer>
+                    </blockquote>
+
+                    <p>This website is meant to help others learn group theory, the study of <strong>symmetry</strong>. Group theory is commonly used in physics and chemistry, while requiring little to no math to learn.</p>
+        
+                    <!-- Social buttons -->
+                    <a href="https://twitter.com/intent/tweet?text=Learn%20group%20theory%20visually" class="fa fa-twitter"></a>
+                    <a href="https://github.com" class="fa fa-code"></a>
+                    <a href="" class="fa fa-envelope-o"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Green column -->
+    <div class="col-right">
+        <div class="chapters container-fluid">
+            <div class="col-sm-6 chapter">
+                <div class="border" onclick="chapter('chapters/ch1.html')">
+                    <img src="assets/molecule.svg">
+                </div>
+                <h2>Chapter 1: Symmetry</h2>
+            </div>
+            <div class="col-sm-6 chapter">
+                <div class="border" onclick="chapter('chapters/ch2.html')">
+                    <img src="assets/cube.svg">
+                </div>
+                <h2>Chapter 2: Axioms</h2>
+            </div>
+
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
