@@ -13,7 +13,6 @@
         @import url('https://fonts.googleapis.com/css?family=Montserrat');
         @import url('https://fonts.googleapis.com/css?family=Open+Sans');
         body {
-            perspective: 500px;
             font-family: 'Open Sans', sans-serif;
             background-color: white;
             margin: 0;
@@ -76,6 +75,15 @@
         }
         
         .container {
+            backface-visibility:visible;
+            -webkit-backface-visibility:visible;
+            -moz-backface-visibility:visible;
+            -o-backface-visibility:visible;
+            perspective: 500px;
+            -webkit-perspective: 500px;
+            -moz-perspective: 500px;
+            -o-perspective: 500px;
+            
             display: flex;
             justify-content: center;
             align-items: center;
