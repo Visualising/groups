@@ -68,7 +68,6 @@ blockquote {
     color: black;
     opacity: 0.5;
     padding: 7px;
-    
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
@@ -103,9 +102,13 @@ a:hover {
     color: #607D8B;
 }
 
+
+/* Space out the quote source and the quote content */
+
 footer {
     margin-top: 1em;
 }
+
 
 /* On mobile, push the green column down and have no padding */
 
@@ -138,11 +141,16 @@ img {
     color: white;
 }
 
+
+/* Add some space between the chapters */
+
 .chapter {
-    margin-top: 5em;
+    margin-top: 4em;
 }
 
+
 /* Add a border around chapter images */
+
 .border {
     width: 100%;
     height: 100%;
@@ -180,9 +188,10 @@ h2 {
 }
 
 
-/* If the screen isn't a phone, show the columns side by side */
+/* If the screen isn't a phone */
 
 @media (min-width: 48em) {
+    /* Change the spacing for desktops and tablets */
     .col-left {
         width: 35%;
         height: 100%;
@@ -191,6 +200,7 @@ h2 {
         float: left;
         padding-right: 2em;
     }
+    /* For desktops and tablets, show the col on the right. If not, show it on the bottom */
     .col-right {
         width: 60%;
         height: 100%;
@@ -200,6 +210,7 @@ h2 {
         margin-top: 0%;
         float: right;
     }
+    /* Add some spacing for the social media buttons */
     .fa {
         margin-top: 4em;
     }
@@ -214,12 +225,8 @@ h2 {
     }
 }
 
-.bob {
-    margin-top: 1000000px;
-}
 
-
-/* Fade in animation */
+/* Fade in animations */
 
 @keyframes fadeIn {
     0% {

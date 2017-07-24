@@ -35,11 +35,12 @@
                     </blockquote>
 
                     <p>This website is meant to help others learn group theory, the study of <strong>symmetry</strong>. Group theory is commonly used in physics and chemistry, while requiring little to no math to learn.</p>
-        
+
                     <!-- Social buttons -->
-                    <a href="https://twitter.com/intent/tweet?text=Learn%20group%20theory%20visually" class="fa fa-twitter"></a>
-                    <a href="https://github.com" class="fa fa-code"></a>
-                    <a href="" class="fa fa-envelope-o"></a>
+                    <a href="https://github.com/Visualising/groups" class="fa fa-github"></a>
+                    <a href="https://twitter.com/home?status=Learn%20group%20theory%20visually%20%0Ahttps%3A//visualising.github.io/groups" class="fa fa-twitter"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//visualising.github.io/groups" class="fa fa-facebook"></a>
+                    <a href="https://plus.google.com/share?url=https%3A//visualising.github.io/groups" class="fa fa-google-plus"></a>
                 </div>
             </div>
         </div>
@@ -49,13 +50,13 @@
     <div class="col-right">
         <div class="chapters container-fluid">
             <div class="col-sm-6 chapter">
-                <div class="border" onclick="chapter('chapters/ch1.html')">
+                <div class="border" onclick="chapter('symmetry')">
                     <img src="assets/molecule.svg">
                 </div>
                 <h2>Chapter 1: Symmetry</h2>
             </div>
             <div class="col-sm-6 chapter">
-                <div class="border" onclick="chapter('chapters/ch2.html')">
+                <div class="border" onclick="chapter('')">
                     <img src="assets/cube.svg">
                 </div>
                 <h2>Chapter 2: Axioms</h2>
@@ -64,7 +65,11 @@
         </div>
     </div>
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <script>
+        function chapter(link) {
+            window.location.href = link;
+        }
+    </script>
 </body>
 
 </html>

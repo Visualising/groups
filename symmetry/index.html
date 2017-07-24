@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- HTML boilerplate stuff -->
+    <meta charset="UTF-8">
+    <title>Symmetry</title>
+    <link rel="icon" href="https://visualising.github.io/groups/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<!--    _ _ _
+       /_/_/_/\
+      /_/_/_/\/\
+     /_/_/_/\/\/\
+     \_\_\_\/\/\/
+      \_\_\_\/\/
+       \_\_\_\/
+-->
+
+<body>
+    <section id="title">
+        <h1>Chapter 1: Symmetry</h1>
+        <img src="https://visualising.github.io/groups/assets/rubikscube.svg">
+    </section>
+    <section class="text">
+        <p>Group theory is about symmetry. For example, a square is very <em>symmetrical</em>.</p>
+        <p>But what does that mean? Well, it means we can do some action to it and <b>it'd still look identical.</b></p>
+
+        <section class="visualisation" onclick="startAnimation('flipAnim', 'flip')">
+            <div class="container">
+                <div id="flip" class="cube" style="background: #f38181;"></div>
+            </div>
+        </section>
+
+        <p class="caption">(Click the images to start an animation)</p>
+        <p>We can rotate it, flip it, etc. we call each one of these actions a <em>symmetry</em> and if we were to list out each and every one of these symmetries, we get a group.</p>
+        <section class="visualisation">
+            <div class="container">
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg">
+                    <p class="caption">No action</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate(90deg)">
+                    <p class="caption">90°</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate(180deg)">
+                    <p class="caption">180°</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate(-90deg)">
+                    <p class="caption">-90°</p>
+                </div>
+            </div>
+            <div class="container">
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotateX(180deg)">
+                    <p class="caption">Horizontal flip</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotateY(180deg)">
+                    <p class="caption">Vertical flip</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate3d(1, 1, 0, 180deg)">
+                    <p class="caption">Diagonal flip</p>
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate3d(-1, 1, 0, 180deg)">
+                    <p class="caption">Diagonal flip</p>
+                </div>
+            </div>
+        </section>
+
+        <p class="caption">Hover over each cube to see the action</p>
+        <p>Now, you may notice that the action of doing nothing is still considered a symmetry. You can think of it like a zero. We'll explore this concept further in the next chapter.</p>
+
+        <section class="quiz">
+            <div class="container">
+                <a class="action-button" style="background-color: #f38181;">Circle</a>
+                <a class="action-button" style="background-color: #95E1D3;">Triangle</a>
+                <a class="action-button" style="background-color: #FCE38A;">Square</a>
+            </div>
+        </section>
+
+        <p>The central idea of group theory isn't just listing out every single symmetry and then calling it a day. One important aspect of it is seeing how symmetries interact with other symmetries.</p>
+        <p>For example, if you flip our square vertically, and then diagonally, it's the exact same as a 90° turn.</p>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script>
+        window.sr = ScrollReveal();
+        sr.reveal('.visualisation', {
+            duration: 2000
+        });
+
+        function startAnimation(animationClass, elementId) {
+            element = document.getElementById(elementId);
+            element.classList.add(animationClass);
+        }
+
+    </script>
+
+</body>
+
+</html>
