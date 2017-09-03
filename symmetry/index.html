@@ -8,18 +8,9 @@
     <title>Symmetry</title>
     <link rel="icon" href="https://visualising.github.io/groups/assets/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
-<!--    _ _ _
-       /_/_/_/\
-      /_/_/_/\/\
-     /_/_/_/\/\/\
-     \_\_\_\/\/\/
-      \_\_\_\/\/
-       \_\_\_\/
--->
 
 <body>
     <section id="title">
@@ -27,17 +18,22 @@
         <img src="https://visualising.github.io/groups/assets/rubikscube.svg">
     </section>
     <section class="text">
-        <p>Group theory is about symmetry. For example, a square is very <em>symmetrical</em>.</p>
-        <p>But what does that mean? Well, it means we can do some action to it and <b>it'd still look identical.</b></p>
+        <p>The year is 1800. And we’ve gotten quite good at solving equations, but in the quest to find the solution to polynomials of degree 4, 5, 6 and higher, we needed a bit of help. This, is where an 18-year-old named Évariste Galois plays a role in this. He used something he called a “group”, laying down the foundations of the theory. Promptly, Gauss had done a blistering amount of contributions to modular arithmetic, which led to him discovering a bit about groups and subgroups. Soon, academia saw the usefulness of the group, and how many applications it had, from geometry to cryptography, from music theory to chemistry, quickly realizing that group theory is here to stay.</p>
+        
+        <h2>Introduction</h2>
+        <blockquote>The universe is an enormous direct product of representations of symmetry groups. – Hermann Weyl</blockquote>
+        <p>When we think about symmetry in geometry class, we’d often remind ourselves that circles, triangles and rectangles fall into that category. You could reflect them and rotate them, and they’d look <b>identical.</b></p>
 
-        <section class="visualisation" onclick="startAnimation('flipAnim', 'flip')">
+        <section class="visualisation">
             <div class="container">
-                <div id="flip" class="cube" style="background: #f38181;"></div>
+                <div class="cube" style="background: #f38181;" onmouseover="startAnimation('flipAnim', this)"></div>
             </div>
         </section>
-
-        <p class="caption">(Click the images to start an animation)</p>
-        <p>We can rotate it, flip it, etc. we call each one of these actions a <em>symmetry</em> and if we were to list out each and every one of these symmetries, we get a group.</p>
+        
+        <p class="caption">(Hover over the images to start an animation)</p>
+        <h3>Definition</h3>
+        <em>Symmetry is when objects still take the same shape when an action is performed on them</em>
+        <p>The result of these actions is what's called a <em>symmetry</em>. As a matter of fact, it'd be quite difficult to keep track of every action so far. So in order to make it less confusing, we've coloured the corners of our square. Now, imagine a labelled square, turning it would result in a completely new variation of our previous square. And this, is what's called a symmetry. Squares naturally have 8 symmetries, including the action of doing nothing to the square.</p>
         <section class="visualisation">
             <div class="container">
                 <div>
@@ -60,50 +56,186 @@
             <div class="container">
                 <div>
                     <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotateX(180deg)">
-                    <p class="caption">Horizontal flip</p>
-                </div>
-                <div>
-                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotateY(180deg)">
                     <p class="caption">Vertical flip</p>
                 </div>
                 <div>
-                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate3d(1, 1, 0, 180deg)">
-                    <p class="caption">Diagonal flip</p>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotateY(180deg)">
+                    <p class="caption">Horizontal flip</p>
                 </div>
                 <div>
                     <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate3d(-1, 1, 0, 180deg)">
                     <p class="caption">Diagonal flip</p>
                 </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" style="transform: rotate3d(1, 1, 0, 180deg)">
+                    <p class="caption">Diagonal flip</p>
+                </div>
             </div>
         </section>
 
-        <p class="caption">Hover over each cube to see the action</p>
-        <p>Now, you may notice that the action of doing nothing is still considered a symmetry. You can think of it like a zero. We'll explore this concept further in the next chapter.</p>
+        <p>Let's apply what we learned to something else</p>
 
         <section class="quiz">
+            <p id="quizText"></p>
+            <div class="category">
+                <input type="radio" value="a" name="symmetry" id="symmetry-1">
+                <label for="symmetry-1"><span class="radio" id="label-1"></span></label>
+            </div>
+            <div class="category">
+                <input type="radio" value="b" name="symmetry" id="symmetry-2">
+                <label for="symmetry-2"><span class="radio" id="label-2"></span></label>
+            </div>
+            <div class="category">
+                <input type="radio" value="c" name="symmetry" id="symmetry-3">
+                <label for="symmetry-3"><span class="radio" id="label-3"></span></label>
+            </div>
+            <p id="explanation"></p>
+            <a class="action-button" id="button" style="background-color: dimgray;" onclick="nextPage()">Next</a><br>
+        </section>
+
+        <p>As you've seen, circles have an infinite amount of symmetries, you can rotate it a thousand degrees and they'd still remain symmetrical. In fact, rotating it a thousand degrees would be identical to a 280-degree rotation. The ways you can rotate it just go on forever. Listing out each and every one of them like with our square would be impossible.</p>
+
+        <section class="visualisation">
             <div class="container">
-                <a class="action-button" style="background-color: #f38181;">Circle</a>
-                <a class="action-button" style="background-color: #95E1D3;">Triangle</a>
-                <a class="action-button" style="background-color: #FCE38A;">Square</a>
+                <div class="radial-progress">
+                    <div class="circle">
+                        <div class="mask full">
+                            <div class="fill"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill"></div>
+                            <div class="fill fix"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <p>The central idea of group theory isn't just listing out every single symmetry and then calling it a day. One important aspect of it is seeing how symmetries interact with other symmetries.</p>
-        <p>For example, if you flip our square vertically, and then diagonally, it's the exact same as a 90° turn.</p>
+        <p>However, one important aspect of group theory is seeing how symmetries play nicely with each other. For example, if you were to turn a square and then flip it diagonally, it’s the exact same as a vertical flip. We could say that it equals a turn and flip, after all.</p>
+
+        <section class="visualisation">
+            <div class="container">
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" onmouseover="startAnimation('diagramAnim',this)">
+                </div>
+                <div>
+                    <img src="https://visualising.github.io/groups/assets/cube.svg" onmouseover="startAnimation('verticalFlip',this)">
+                </div>
+            </div>
+            <p class="caption">90° + Diagonal Flip = Horizontal Flip</p>
+        </section>
+        <p>But considering all of these interactions between symmetries, understanding how each and every one relates to another would be very, very difficult. This, is where diagrams play a huge role.</p>
+        <section class="visualisation">
+            <div class="container">
+                <img src="/assets/diagram.svg" style="width: 200px !important; height: 200px !important;">
+            </div>
+        </section>
+        <p>This, is what's called a <em>Cayley diagram</em>, they're like a map, guiding us from A to B except with symmetries. Say for example you wished to achieve the bottom right symmetry. All you'd have to do is just follow the diagram. This particular diagram however, only shows the interactions between flipping a square, with red representing a vertical flip, and blue representing a horizontal flip. If rotating was involved, it'd get quite huge.</p>
     </section>
 
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
     <script>
-        window.sr = ScrollReveal();
-        sr.reveal('.visualisation', {
-            duration: 2000
-        });
-
-        function startAnimation(animationClass, elementId) {
-            element = document.getElementById(elementId);
-            element.classList.add(animationClass);
+        function startAnimation(animationClass, element) {
+            element.classList += " "+ animationClass;
         }
 
+        $.fn.shuffle = function() {
+
+            var allElems = this.get(),
+                getRandom = function(max) {
+                    return Math.floor(Math.random() * max);
+                },
+                shuffled = $.map(allElems, function() {
+                    var random = getRandom(allElems.length),
+                        randEl = $(allElems[random]).clone(true)[0];
+                    allElems.splice(random, 1);
+                    return randEl;
+                });
+
+            this.each(function(i) {
+                $(this).replaceWith($(shuffled[i]));
+            });
+
+            return $(shuffled);
+
+        };
+        $(document).ready(function() {
+            $('.category').shuffle();
+        });
+
+        var quizData = [
+
+            {
+                question: "1 of 2: How many symmetries does an equilateral triangle have? (You can use our diagram of 8 squares as a point of reference.)",
+                answers: {
+                    a: "6",
+                    b: "5",
+                    c: "8"
+                },
+
+                explanation: "A triangle has 3 ways you can flip it, but the most tricky part of this question is how many rotational symmetries it has. When you rotate it 270° that's the same thing as -90°, so unlike the square, the triangle only has 2 rotational symmetries. If you include the action of doing nothing, that's about 6."
+            },
+            {
+                question: "2 of 2: How many symmetries does a circle have?",
+                answers: {
+                    a: "An infinite amount",
+                    b: "360",
+                    c: "None"
+                },
+
+                explanation: "Circles will fit into their outline no matter how many times you do a full turn. It will always remain the same shape. If you include how many ways you can flip it... well you'd still end up with infinite."
+            }
+        ];
+
+        var explained = true;
+        var iterated = false;
+
+        function buildQuiz(questionNum) {
+
+            if (explained) {
+                explained = false;
+                $('input[name=symmetry]').prop('checked', false);
+
+                $('#quizText').html(quizData[questionNum].question);
+                for (i = 0; i < 3; ++i) {
+                    $('#label-' + (i + 1)).html(Object.values(quizData[questionNum].answers)[i])
+                }
+                $('#explanation').html("");
+            } else {
+                $('#explanation').html(quizData[questionNum].explanation);
+                explained = true;
+            }
+
+        }
+
+        function nextPage() {
+            if (iterated && !explained) {
+                $('#button').hide();                
+            }
+            
+            if (explained || iterated) {
+                buildQuiz(1);
+                iterated = true;
+            } else {
+                buildQuiz(0);
+            }
+        }
+
+        buildQuiz(0);
+
+        $('head style[type="text/css"]')
+        var transform_styles = ['-webkit-transform', 'transform'];
+        window.randomize = function() {
+            var rotation = Math.floor(Math.random() * 180);
+            var fill_rotation = rotation;
+            var fix_rotation = rotation * 2;
+            for (i in transform_styles) {
+                $('.circle .fill, .circle .mask.full').css(transform_styles[i], 'rotate(' + fill_rotation + 'deg)');
+                $('.circle .fill.fix').css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
+            }
+        }
+        setTimeout(window.randomize, 200);
+        $('.radial-progress').hover(window.randomize);
     </script>
 
 </body>

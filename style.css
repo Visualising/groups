@@ -19,9 +19,6 @@ blockquote {
     margin-left: 2.5em;
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
-    -moz-animation: fadeIn ease 1s;
-    -o-animation: fadeIn ease 1s;
-    -ms-animation: fadeIn ease 1s;
 }
 
 
@@ -38,8 +35,6 @@ blockquote {
     opacity: 0;
     animation: fadeIn ease forwards 1s 0.8s;
     -webkit-animation: fadeIn ease forwards 1s 0.8s;
-    -moz-animation: fadeIn ease forwards 1s 0.8s;
-    -o-animation: fadeIn ease forwards 1s 0.8s;
 }
 
 
@@ -51,8 +46,6 @@ blockquote {
     opacity: 0;
     animation: fadeIn ease forwards 1s 1.2s;
     -webkit-animation: fadeIn ease forwards 1s 1.2s;
-    -moz-animation: fadeIn ease forwards 1s 1.2s;
-    -o-animation: fadeIn ease forwards 1s 1.2s;
 }
 
 
@@ -67,8 +60,6 @@ blockquote {
     padding: 7px;
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
 }
 
 
@@ -133,8 +124,6 @@ img {
     opacity: 0;
     animation: fadeIn ease forwards 1s 1.5s;
     -webkit-animation: fadeIn ease forwards 1s 1.5s;
-    -moz-animation: fadeIn ease forwards 1s 1.5s;
-    -o-animation: fadeIn ease forwards 1s 1.5s;
     color: white;
 }
 
@@ -157,8 +146,6 @@ img {
     cursor: pointer;
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
 }
 
 
@@ -176,8 +163,6 @@ h2 {
     font-size: 1em;
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
     background-color: #37474F;
     border: 10px solid #37474F;
     border-radius: 10px;
@@ -234,25 +219,7 @@ h2 {
     }
 }
 
-@-moz-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeIn {
     0% {
         opacity: 0;
     }
