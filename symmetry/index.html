@@ -73,27 +73,7 @@
             </div>
         </section>
 
-        <p>Let's apply what we learned to something else</p>
-
-        <section class="quiz">
-            <p id="quizText"></p>
-            <div class="category">
-                <input type="radio" value="a" name="symmetry" id="symmetry-1">
-                <label for="symmetry-1"><span class="radio" id="label-1"></span></label>
-            </div>
-            <div class="category">
-                <input type="radio" value="b" name="symmetry" id="symmetry-2">
-                <label for="symmetry-2"><span class="radio" id="label-2"></span></label>
-            </div>
-            <div class="category">
-                <input type="radio" value="c" name="symmetry" id="symmetry-3">
-                <label for="symmetry-3"><span class="radio" id="label-3"></span></label>
-            </div>
-            <p id="explanation"></p>
-            <a class="action-button" id="button" style="background-color: dimgray;" onclick="nextPage()">Next</a><br>
-        </section>
-
-        <p>As you've seen, circles have an infinite amount of symmetries, you can rotate it a thousand degrees and they'd still remain symmetrical. In fact, rotating it a thousand degrees would be identical to a 280-degree rotation. The ways you can rotate it just go on forever. Listing out each and every one of them like with our square would be impossible.</p>
+        <p>Circles have an infinite amount of symmetries, you can rotate it a thousand degrees and they'd still remain symmetrical. In fact, rotating it a thousand degrees would be identical to a 280-degree rotation. The ways you can rotate it just go on forever. Listing out each and every one of them like with our square would be impossible.</p>
 
         <section class="visualisation">
             <div class="container">
@@ -124,13 +104,7 @@
             </div>
             <p class="caption">90° + Diagonal Flip = Horizontal Flip</p>
         </section>
-        <p>But considering all of these interactions between symmetries, understanding how each and every one relates to another would be very, very difficult. This, is where diagrams play a huge role.</p>
-        <section class="visualisation">
-            <div class="container">
-                <img src="https://visualising.github.io/groups/assets/diagram.svg" style="width: 200px !important; height: 200px !important;">
-            </div>
-        </section>
-        <p>This, is what's called a <em>Cayley diagram</em>, they're like a map, guiding us from A to B except with symmetries. Say for example you wished to achieve the bottom right symmetry. All you'd have to do is just follow the diagram. This particular diagram however, only shows the interactions between flipping a square, with red representing a vertical flip, and blue representing a horizontal flip. If rotating was involved, it'd get quite huge.</p>
+
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
@@ -138,90 +112,6 @@
         function startAnimation(animationClass, element) {
             element.classList += " "+ animationClass;
         }
-
-        $.fn.shuffle = function() {
-
-            var allElems = this.get(),
-                getRandom = function(max) {
-                    return Math.floor(Math.random() * max);
-                },
-                shuffled = $.map(allElems, function() {
-                    var random = getRandom(allElems.length),
-                        randEl = $(allElems[random]).clone(true)[0];
-                    allElems.splice(random, 1);
-                    return randEl;
-                });
-
-            this.each(function(i) {
-                $(this).replaceWith($(shuffled[i]));
-            });
-
-            return $(shuffled);
-
-        };
-        $(document).ready(function() {
-            $('.category').shuffle();
-        });
-
-        var quizData = [
-
-            {
-                question: "1 of 2: How many symmetries does an equilateral triangle have? (You can use our diagram of 8 squares as a point of reference.)",
-                answers: {
-                    a: "6",
-                    b: "5",
-                    c: "8"
-                },
-
-                explanation: "A triangle has 3 ways you can flip it, but the most tricky part of this question is how many rotational symmetries it has. When you rotate it 270° that's the same thing as -90°, so unlike the square, the triangle only has 2 rotational symmetries. If you include the action of doing nothing, that's about 6."
-            },
-            {
-                question: "2 of 2: How many symmetries does a circle have?",
-                answers: {
-                    a: "An infinite amount",
-                    b: "360",
-                    c: "None"
-                },
-
-                explanation: "Circles will fit into their outline no matter how many times you do a full turn. It will always remain the same shape. If you include how many ways you can flip it... well you'd still end up with infinite."
-            }
-        ];
-
-        var explained = true;
-        var iterated = false;
-
-        function buildQuiz(questionNum) {
-
-            if (explained) {
-                explained = false;
-                $('input[name=symmetry]').prop('checked', false);
-
-                $('#quizText').html(quizData[questionNum].question);
-                for (i = 0; i < 3; ++i) {
-                    $('#label-' + (i + 1)).html(Object.values(quizData[questionNum].answers)[i])
-                }
-                $('#explanation').html("");
-            } else {
-                $('#explanation').html(quizData[questionNum].explanation);
-                explained = true;
-            }
-
-        }
-
-        function nextPage() {
-            if (iterated && !explained) {
-                $('#button').hide();                
-            }
-            
-            if (explained || iterated) {
-                buildQuiz(1);
-                iterated = true;
-            } else {
-                buildQuiz(0);
-            }
-        }
-
-        buildQuiz(0);
 
         $('head style[type="text/css"]')
         var transform_styles = ['-webkit-transform', 'transform'];
